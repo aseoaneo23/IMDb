@@ -10,13 +10,15 @@ module.exports = defineConfig({
     chromeWebSecurity: false,
     viewportWidth: 1920,
     viewportHeight: 1080,
-    VALID_USER: 'myke48021@gmail.com',
-    VALID_PASSWORD: 'Myke12_34'
 
     //excludeSpecPattern: "*.js",
     //env: {
     //TAGS: "@focus"
     //},
   },
+  env: {
+    VALID_USER: 'myke48021@gmail.com',
+    VALID_PASSWORD: 'Myke12_34'
+  }
   
 });
