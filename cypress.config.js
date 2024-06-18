@@ -10,8 +10,8 @@ module.exports = defineConfig({
     chromeWebSecurity: false,
     viewportWidth: 1920,
     viewportHeight: 1080,
-    VALID_USER: 'username',
-    VALID_PASSWORD: 'password'
+    VALID_USER: 'myke48021@gmail.com',
+    VALID_PASSWORD: 'Myke12_34'
 
     //excludeSpecPattern: "*.js",
     //env: {
