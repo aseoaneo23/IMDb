@@ -156,7 +156,7 @@ If the above has been done, verify that you can log in to your browser normally 
 - **Errors with content: No content to delete, no content added..**
 
     - **Solution**: Due to the approach that has been given to this practice, there are errors that have not been handled. 
-    Some of the errors that can happen are that in the course of a failed execution, the addition or deletion of some content, whether it is a rating or watch later list, the test fails but the element has been deleted or added.
+    Some of the errors that can happen are that in the course of a failed execution, the addition or deletion of some content, whether it is a rating or watch later list, the test fails due to the element has been deleted or added.
 
         In this case, the next execution will be failed, since there are things already in the list or there are none.
 
