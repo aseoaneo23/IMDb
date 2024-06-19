@@ -9,6 +9,7 @@ class Login {
         getEmailInput: () => cy.get(login_page.EMAIL_INPUT),
         getPasswordInput: () => cy.get(login_page.PASSWORD_INPUT),
         getSubmitBtn: () => cy.get(login_page.SUBMIT_BTN),
+        getPostersRequest: main_page.LOAD_POSTERS_ENDPOINT,
         validEmail: Cypress.env('VALID_USER'),
         validPassword: Cypress.env('VALID_PASSWORD')
     }
@@ -19,7 +20,8 @@ class Login {
         this.properties.getEmailInput().clear().type(this.properties.validEmail)
         this.properties.getPasswordInput().clear().type(this.properties.validPassword)
         this.properties.getSubmitBtn().click()
-        cy.wait(2500)
+        cy.intercept(this.properties.getPostersRequest).as('getPosterRequest')
+        cy.wait('@getPosterRequest',{timeout: 10000})
     }
 }
 

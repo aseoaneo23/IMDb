@@ -57,7 +57,7 @@ class MainPage {
 
     rateContent = () => {
         this.properties.getRateContentBtn().click()
-        this.properties.getStarsToRate().click({force:true})
+        this.properties.getStarsToRate().click({ force: true })
         this.properties.getFinishRatingBtn().click()
     }
 
