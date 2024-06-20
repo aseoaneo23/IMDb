@@ -12,8 +12,8 @@ module.exports = defineConfig({
     viewportHeight: 1080,
   },
   env: {
-    VALID_USER: 'your email',
-    VALID_PASSWORD: 'your password'
+    VALID_USER: process.env.CYPRESS_VALID_USER || 'default email',
+    VALID_PASSWORD: process.env.CYPRESS_VALID_PASSWORD || 'default password'
     //TAGS: "@focus"
   }
 });
