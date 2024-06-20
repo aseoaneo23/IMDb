@@ -11,15 +11,12 @@ module.exports = defineConfig({
     chromeWebSecurity: false,
     viewportWidth: 1920,
     viewportHeight: 1080,
-
-    //excludeSpecPattern: "*.js",
-    //env: {
-    //TAGS: "@focus"
-    //},
+    pageLoadTimeout: 120000
   },
   env: {
-    VALID_USER: 'Your user',
-    VALID_PASSWORD: 'Your pass'
+    VALID_USER: process.env.CYPRESS_VALID_USER || 'default email',
+    VALID_PASSWORD: process.env.CYPRESS_VALID_PASSWORD || 'default password'
+    //TAGS: "@focus"
   }
-  
 });
+

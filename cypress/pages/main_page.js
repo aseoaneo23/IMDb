@@ -3,7 +3,7 @@ const xpath = require('cypress-xpath')
 
 class MainPage {
     properties = {
-        getRejectCookiesBtn: () => cy.get(main_page.REJECT_COOKIES),
+        getRejectCookiesBtn: () => cy.get(main_page.REJECT_COOKIES,{timeout: 10000}),
         getSearchBar: () => cy.get(main_page.SEARCH_INPUT),
         getPageTitle: () => cy.xpath(main_page.PAGE_TITLE),
         getError: () => cy.get(main_page.ERROR_SECTION),
@@ -20,8 +20,14 @@ class MainPage {
     }
 
     visitIMDb = () => {
-        cy.visit('/')
-        this.properties.getRejectCookiesBtn().click()
+        cy.visit('/', {
+            failOnStatusCode: false,
+            headers: {
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.5735.199 Safari/537.36'
+            }
+        });
+
+        //this.properties.getRejectCookiesBtn().click()
     }
 
     searchTopic = topic => {

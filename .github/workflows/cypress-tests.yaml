@@ -1,0 +1,22 @@
+name: Ejecutar Pruebas Cypress
+
+on: [push, pull_request]
+
+jobs:
+  cypress-run:
+    runs-on: windows-latest
+    env:
+      CYPRESS_VALID_USER: ${{ secrets.USER }}
+      CYPRESS_VALID_PASSWORD: ${{ secrets.PASS }}
+    steps:
+      - name: Obtener código
+        uses: actions/checkout@v4
+
+      - name: Instalar dependencias
+        run: npm i
+
+      - name: Iniciar servidor
+        env:
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npx cypress run --browser chrome --record --key ${{ secrets.CYPRESS_RECORD_KEY }}
