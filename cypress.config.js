@@ -14,8 +14,8 @@ module.exports = defineConfig({
     pageLoadTimeout: 120000
   },
   env: {
-    VALID_USER: process.env.CYPRESS_VALID_USER || 'default email',
-    VALID_PASSWORD: process.env.CYPRESS_VALID_PASSWORD || 'default password'
+    VALID_USER: process.env.USER || 'myke48021@gmail.com',
+    VALID_PASSWORD: process.env.PASS || 'Myke12_34'
     //TAGS: "@focus"
   }
 });
