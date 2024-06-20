@@ -1,10 +1,10 @@
-name: Cypress Tests
+name: Run Cypress Tests
 
 on: [push, pull_request]
 
 jobs:
   cypress-run:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
@@ -13,10 +13,10 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '16'
+          node-version: '20'
 
       - name: Install dependencies
-        run: npm i
+        run: npm ci
 
       - name: Start server
         run: npm start &
@@ -24,28 +24,13 @@ jobs:
           CI: true
 
       - name: Wait for server to be ready
-        uses: jakejarvis/wait-action@v0.1.0
-        with:
-          url: 'http://localhost:3000' # Ajusta esta URL según tu servidor
+        run: npx wait-on http://localhost:3000 # Ajusta esta URL según tu servidor
 
-      - name: Run Cypress tests
+      - name: Run Cypress tests in Chrome
         uses: cypress-io/github-action@v6
         with:
-          record: false
-          config-file: cypress.json
+          browser: chrome
           start: npm start
         env:
-          # Pass the Cypress Dashboard record key if you have one
-          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           # Optionally pass other environment variables
           DEBUG: 'cypress:*'
-
-      - name: Upload Cypress artifacts
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: cypress-artifacts
-          path: |
-            cypress/screenshots
-            cypress/videos
-          if-no-files-found: ignore
