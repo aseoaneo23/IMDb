@@ -28,8 +28,13 @@ jobs:
     - name: Install dependencies
       run: npm install
 
+    - name: Verify Cypress installation
+      run: npx cypress verify
+
     - name: Run Cypress tests
       run: npx cypress run
+      env:
+        CYPRESS_BROWSER: chrome # Opcional: especificar el navegador
 
     - name: Archive Cypress test results
       if: always()
@@ -37,3 +42,17 @@ jobs:
       with:
         name: cypress-results
         path: cypress/cucumber-json
+
+    - name: Archive Cypress videos
+      if: always()
+      uses: actions/upload-artifact@v3
+      with:
+        name: cypress-videos
+        path: cypress/videos
+
+    - name: Archive Cypress screenshots
+      if: always()
+      uses: actions/upload-artifact@v3
+      with:
+        name: cypress-screenshots
+        path: cypress/screenshots
