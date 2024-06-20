@@ -1,6 +1,7 @@
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
+  projectId: 'wfsn2i',
   e2e: {
     setupNodeEvents(on, config) {
       return require("./cypress/plugins/index.js")(on, config);
@@ -17,8 +18,8 @@ module.exports = defineConfig({
     //},
   },
   env: {
-    VALID_USER: 'myke48021@gmail.com',
-    VALID_PASSWORD: 'Myke12_34'
+    VALID_USER: 'Your user',
+    VALID_PASSWORD: 'Your pass'
   }
   
 });
