@@ -9,6 +9,7 @@ class Login {
         getEmailInput: () => cy.get(login_page.EMAIL_INPUT),
         getPasswordInput: () => cy.get(login_page.PASSWORD_INPUT),
         getSubmitBtn: () => cy.get(login_page.SUBMIT_BTN),
+        getPostersRequest: main_page.LOAD_POSTERS_ENDPOINT,
         validEmail: Cypress.env('VALID_USER'),
         validPassword: Cypress.env('VALID_PASSWORD')
     }

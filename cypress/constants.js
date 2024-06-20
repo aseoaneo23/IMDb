@@ -12,7 +12,8 @@ export const main_page = {
     WATCHLIST_BTN: '[data-testid="poster-watchlist-ribbon-add"]',
     WATCHLIST_PAGE_BTN: '//a[contains(@class,"ipc-btn")]//span[text()="Lista de seguimiento"]',
     PROFILE_BTN:'//label[@aria-haspopup="true"][contains(.,"myke")]',
-    MY_RATINGS_BTN: '//a[@role="menuitem"][contains(.,"Mis puntuaciones")]'
+    MY_RATINGS_BTN: '//a[@role="menuitem"][contains(.,"Mis puntuaciones")]',
+    LOAD_POSTERS_ENDPOINT: 'https://api.graphql.imdb.com/?operationName=UserRatingsAndWatchOptions&variables=%7B%22fetchOtherUserRating%22%3Afalse%2C%22idArray%22%3A%5B%22tt20215968%22%2C%22tt12037194%22%2C%22tt22022452%22%2C%22tt27470893%22%2C%22tt23289160%22%2C%22tt1684562%22%2C%22tt15239678%22%2C%22tt17279496%22%2C%22tt12637874%22%2C%22tt32258354%22%2C%22tt4919268%22%2C%22tt16283824%22%2C%22tt27995594%22%2C%22tt16426418%22%2C%22tt13649112%22%2C%22tt1392190%22%2C%22tt11389872%22%2C%22tt2788316%22%2C%22tt28681409%22%2C%22tt11198330%22%2C%22tt2096673%22%2C%22tt15398776%22%2C%22tt8740790%22%2C%22tt1160419%22%2C%22tt0903747%22%2C%22tt0816692%22%2C%22tt14230458%22%2C%22tt0944947%22%2C%22tt13016388%22%2C%22tt0468569%22%5D%2C%22includeUserRating%22%3Atrue%2C%22locale%22%3A%22es-ES%22%2C%22location%22%3A%7B%22latLong%22%3A%7B%22lat%22%3A%2240.41%22%2C%22long%22%3A%22-3.71%22%7D%7D%7D&extensions=%7B%22persistedQuery%22%3A%7B%22sha256Hash%22%3A%229672397d6bf156302f8f61e7ede2750222bd2689e65e21cfedc5abd5ca0f4aea%22%2C%22version%22%3A1%7D%7D'
     }
 
 export const login_page = {
