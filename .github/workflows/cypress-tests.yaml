@@ -16,6 +16,6 @@ jobs:
         run: npx cypress run --record --key ${{secrets.CYPRESS_CLOUD_KEY}}
         env: 
           CYPRESS_CLOUD_KEY: ${{secrets.CYPRESS_CLOUD_KEY}}
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
           CYPRESS_VALID_USER: ${{ secrets.USER }}
           CYPRESS_VALID_PASSWORD: ${{ secrets.PASS }}
