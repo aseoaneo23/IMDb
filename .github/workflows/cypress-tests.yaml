@@ -14,13 +14,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '20'
-
       - name: Install dependencies
         run: npm i
 
       - name: Start server
-        run: npx cypress run --browser chrome
+        run: npx cypress run --record --key ${{secrets.CYPRESS_CLOUD_KEY}}
+        env: 
+          CYPRESS_CLOUD_KEY: ${{secrets.CYPRESS_CLOUD_KEY}}
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}
