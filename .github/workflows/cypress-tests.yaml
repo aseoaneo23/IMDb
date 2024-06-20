@@ -17,6 +17,6 @@ jobs:
 
       - name: Iniciar servidor
         env:
-          CYPRESS_CLOUD_KEY: ${{ secrets.CYPRESS_CLOUD_KEY }}
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npx cypress run --record --key ${{ secrets.CYPRESS_CLOUD_KEY }}
+        run: npx cypress run --record --key ${{ secrets.CYPRESS_RECORD_KEY }}
