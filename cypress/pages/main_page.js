@@ -3,7 +3,7 @@ const xpath = require('cypress-xpath')
 
 class MainPage {
     properties = {
-        getRejectCookiesBtn: () => cy.get(main_page.REJECT_COOKIES),
+        getRejectCookiesBtn: () => cy.get(main_page.REJECT_COOKIES,{timeout: 10000}),
         getSearchBar: () => cy.get(main_page.SEARCH_INPUT),
         getPageTitle: () => cy.xpath(main_page.PAGE_TITLE),
         getError: () => cy.get(main_page.ERROR_SECTION),
