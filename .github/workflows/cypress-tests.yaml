@@ -6,8 +6,8 @@ jobs:
   cypress-run:
     runs-on: windows-latest
     env:
-      CYPRESS_VALID_USER: ${{ secrets.USER }}
-      CYPRESS_VALID_PASSWORD: ${{ secrets.PASS }}
+      CYPRESS_VALID_USER: ${{ secrets.CYPRESS_VALID_USER }}
+      CYPRESS_VALID_PASSWORD: ${{ secrets.CYPRESS_VALID_PASSWORD }}
     steps:
       - name: Obtener código
         uses: actions/checkout@v4
