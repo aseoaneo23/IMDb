@@ -5,11 +5,6 @@ on: [push, pull_request]
 jobs:
   cypress-run:
     runs-on: windows-latest
-
-    env:
-      CYPRESS_VALID_USER: ${{ secrets.USER }}
-      CYPRESS_VALID_PASSWORD: ${{ secrets.PASS }}
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -22,3 +17,5 @@ jobs:
         env: 
           CYPRESS_CLOUD_KEY: ${{secrets.CYPRESS_CLOUD_KEY}}
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}
+          CYPRESS_VALID_USER: ${{ secrets.USER }}
+          CYPRESS_VALID_PASSWORD: ${{ secrets.PASS }}
