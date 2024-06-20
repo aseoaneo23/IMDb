@@ -19,18 +19,4 @@ jobs:
         run: npm i
 
       - name: Start server
-        run: npm start &
-        env:
-          CI: true
-
-      - name: Wait for server to be ready
-        run: npx wait-on http://localhost:3000 # Ajusta esta URL según tu servidor
-
-      - name: Run Cypress tests in Chrome
-        uses: cypress-io/github-action@v6
-        with:
-          browser: chrome
-          start: npm start
-        env:
-          # Optionally pass other environment variables
-          DEBUG: 'cypress:*'
+        run: npx cypress run --browser Chrome
