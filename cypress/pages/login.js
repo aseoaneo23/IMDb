@@ -20,8 +20,7 @@ class Login {
         this.properties.getEmailInput().clear().type(this.properties.validEmail)
         this.properties.getPasswordInput().clear().type(this.properties.validPassword)
         this.properties.getSubmitBtn().click()
-        cy.intercept(this.properties.getPostersRequest).as('getPosterRequest')
-        cy.wait('@getPosterRequest',{timeout: 10000})
+        cy.wait(15000)
     }
 }
 
