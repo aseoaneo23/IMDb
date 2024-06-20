@@ -1,4 +1,4 @@
-name: Run Cypress Tests
+name: Ejecutar Pruebas Cypress
 
 on: [push, pull_request]
 
@@ -9,14 +9,14 @@ jobs:
       CYPRESS_VALID_USER: ${{ secrets.USER }}
       CYPRESS_VALID_PASSWORD: ${{ secrets.PASS }}
     steps:
-      - name: Checkout code
+      - name: Obtener código
         uses: actions/checkout@v4
 
-      - name: Install dependencies
+      - name: Instalar dependencias
         run: npm i
 
-      - name: Start server
-        run: npx cypress run --record --key ${{secrets.CYPRESS_CLOUD_KEY}}
-        env: 
-          CYPRESS_CLOUD_KEY: ${{secrets.CYPRESS_CLOUD_KEY}}
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      - name: Iniciar servidor
+        env:
+          CYPRESS_CLOUD_KEY: ${{ secrets.CYPRESS_CLOUD_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npx cypress run --record --key ${{ secrets.CYPRESS_CLOUD_KEY }}
