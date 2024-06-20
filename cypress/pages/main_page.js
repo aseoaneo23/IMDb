@@ -27,7 +27,7 @@ class MainPage {
             }
         });
 
-        this.properties.getRejectCookiesBtn().click()
+        //this.properties.getRejectCookiesBtn().click()
     }
 
     searchTopic = topic => {
