@@ -19,7 +19,7 @@ class Login {
         this.properties.getEmailInput().clear().type(this.properties.validEmail)
         this.properties.getPasswordInput().clear().type(this.properties.validPassword)
         this.properties.getSubmitBtn().click()
-        cy.wait(2500)
+        cy.wait(15000)
     }
 }
 
